@@ -26,7 +26,7 @@ workflows:
   deploy:
     jobs:
       - job_a
-      - job_b
+      # - job_b
       - job_c 
       - notify:
           requires:
