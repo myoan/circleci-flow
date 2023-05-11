@@ -2,17 +2,20 @@ version: 2.1
 
 jobs:
   job_a:
+    docker:
+      - image: cimg/base:2023.03
     steps:
-      - run:
-          command: echo "this is A"
+      - run: echo "this is A"
   job_b:
+    docker:
+      - image: cimg/base:2023.03
     steps:
-      - run:
-          command: echo "this is B"
+      - run: echo "this is B"
   job_c:
+    docker:
+      - image: cimg/base:2023.03
     steps:
-      - run:
-          command: echo "this is C"
+      - run: echo "this is C"
 
 workflows:
   deploy:
