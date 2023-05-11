@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  job_a:
+    steps:
+      - run:
+          command: echo "this is A"
+  job_b:
+    steps:
+      - run:
+          command: echo "this is B"
+  job_c:
+    steps:
+      - run:
+          command: echo "this is C"
+
+workflows:
+  deploy:
+    jobs:
+      - job_a
+      - job_b
+      - job_c 
