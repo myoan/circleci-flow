@@ -16,6 +16,11 @@ jobs:
       - image: cimg/base:2023.03
     steps:
       - run: echo "this is C"
+  notify:
+    docker:
+      - image: cimg/base:2023.03
+    steps:
+      - run: echo "notify!!"
 
 workflows:
   deploy:
@@ -23,3 +28,8 @@ workflows:
       - job_a
       - job_b
       - job_c 
+      - notify:
+          requires:
+            - job_a
+            - job_b
+            - job_c
